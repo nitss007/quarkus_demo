@@ -28,11 +28,9 @@ node {
 	        }    
 	    }
 	    stage ('Deploy to App Server') {
-		    steps {
 			sh 'echo "Deploying App to Server"'	
 			sh 'scp  deploy.sh jenkins@192.168.122.21:~/jenkins'
 			sh 'ssh -o StrictHostKeyChecking=no jenkins@192.168.122.21 "sh deploy.sh"'
-			}
 		  }
 	} catch (e) {
 		echo 'Error occurred during build process!'
