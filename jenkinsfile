@@ -2,8 +2,7 @@ node {
 	def app
 	def image = 'nitss007/docker-test'
 	def branch = 'master'
-	def tag = ${env.BUILD_NUMBER}
-	
+		
 	try {
 		stage('Clone repository') {               
 	    	git branch: branch,
@@ -29,6 +28,7 @@ node {
 	        }    
 	    }
 	    stage ('Deploy to App Server') {
+	    		def tag = ${env.BUILD_NUMBER}
 			sh 'echo "Deploying App to Server"'	
 			sh 'scp  /var/jenkins_home/workspace/COntainerBuild/deploy.sh jenkins@192.168.122.21:~/jenkins'
 			sh 'ssh -o StrictHostKeyChecking=no jenkins@192.168.122.21 "sh ~/jenkins/deploy.sh tag"'
