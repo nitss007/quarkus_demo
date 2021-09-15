@@ -1,6 +1,6 @@
 node {
 	def app
-	def image = 'registry.hub.docker.com/repository/docker/nitss007/docker-test'
+	def image = 'nitss007/docker-test'
 	def branch = 'master'
 	
 	try {
