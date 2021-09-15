@@ -31,7 +31,7 @@ node {
 	    		echo "${env.BUILD_NUMBER}"
 			sh 'echo "Deploying App to Server"'	
 			sh 'scp  /var/jenkins_home/workspace/COntainerBuild/deploy.sh jenkins@192.168.122.21:~/jenkins'
-			sh 'ssh -o StrictHostKeyChecking=no jenkins@192.168.122.21 "sh ~/jenkins/deploy.sh ${env.BUILD_NUMBER}"'
+			sh 'ssh -o StrictHostKeyChecking=no jenkins@192.168.122.21 "sh ~/jenkins/deploy.sh ${BUILD_NUMBER}"'
 		  }
 	} catch (e) {
 		echo 'Error occurred during build process!'
