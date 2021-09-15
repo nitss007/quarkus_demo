@@ -1,1 +1,1 @@
-docker run -p 8090:8080 nitss007/docker-test:$1
+docker run -p 8090:8080 nitss007/docker-test:6
